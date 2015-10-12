@@ -7,7 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>equation</name>
+  <name>vulic</name>
   <url>http://maven.apache.org</url>
 
   <repositories>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>edu.illinois.cs.cogcomp</groupId>
       <artifactId>big-data-utils</artifactId>
-      <version>1.0.3</version> 
+      <version>1.0.3</version>
     </dependency>
     <dependency>
       <groupId>edu.illinois.cs.cogcomp</groupId>
@@ -52,18 +52,18 @@
       <artifactId>stanford-corenlp</artifactId>
       <version>3.5.2</version>
     </dependency>
-    <dependency>
-      <groupId>edu.stanford.nlp</groupId>
-      <artifactId>stanford-corenlp</artifactId>
-      <version>3.5.2</version>
-      <classifier>models-spanish</classifier>
-    </dependency>
-    <dependency>
-      <groupId>edu.stanford.nlp</groupId>
-      <artifactId>stanford-corenlp</artifactId>
-      <version>3.5.2</version>
-      <classifier>models</classifier>
-    </dependency>
+    <!-- <dependency> -->
+    <!--   <groupId>edu.stanford.nlp</groupId> -->
+    <!--   <artifactId>stanford-corenlp</artifactId> -->
+    <!--   <version>3.5.2</version> -->
+    <!--   <classifier>models-spanish</classifier> -->
+    <!-- </dependency> -->
+    <!-- <dependency> -->
+    <!--   <groupId>edu.stanford.nlp</groupId> -->
+    <!--   <artifactId>stanford-corenlp</artifactId> -->
+    <!--   <version>3.5.2</version> -->
+    <!--   <classifier>models</classifier> -->
+    <!-- </dependency> -->
 
     <dependency>
       <groupId>commons-configuration</groupId>
@@ -71,7 +71,18 @@
       <version>1.6</version>
     </dependency>
     
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-analyzers-common</artifactId>
+      <version>5.3.1</version>
+    </dependency>
 
+    <dependency>
+      <groupId>org.apache.lucene</groupId>
+      <artifactId>lucene-core</artifactId>
+      <version>5.3.1</version>
+    </dependency>
+    
   </dependencies>
 
   <!-- needed for lbj plugin -->
