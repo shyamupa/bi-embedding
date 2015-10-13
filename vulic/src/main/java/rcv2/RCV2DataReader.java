@@ -1,16 +1,15 @@
 package rcv2;
+
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-
-import edu.illinois.cs.cogcomp.core.io.LineIO;
 
 public class RCV2DataReader {
 	
@@ -25,12 +24,14 @@ public class RCV2DataReader {
 		
 		String path = "/shared/shelley/yqsong/data/rcv2/RCV2_Multilingual_Corpus/danish/REUTDA6/86619.xml";
 		Analyzer analyzer = AnalyzerFactory.initialize("da");
-		readDocument(path, analyzer);
+		RCV2Data data	 = readDocument(path, analyzer);
+		System.out.println(data.categories);
+		System.out.println(data.content);
 		
 	}
 	
 	public static RCV2Data readDocument (String path, Analyzer analyzer) throws FileNotFoundException {
-		String document = LineIO.slurp(path);
+		String document = IOManager.readContent(path);
 		Pattern pattern = null;
 		Matcher matcher = null;
 		
