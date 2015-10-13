@@ -1315,32 +1315,32 @@ void TrainModel() {
     // Eval
     if (eval_opt) {
       fprintf(stderr, "\n# eval %d, ", cur_iter); execute("date"); fflush(stderr);
-      eval_mono(src->output_file, src->lang, cur_iter);
+      /* eval_mono(src->output_file, src->lang, cur_iter); */
 
       if (is_bi) {
         SaveVector(output_prefix, tgt->lang, tgt, save_opt);
-        eval_mono(tgt->output_file, tgt->lang, cur_iter);
+        /* eval_mono(tgt->output_file, tgt->lang, cur_iter); */
         // cldc
-        cldc(output_prefix, cur_iter);
+        /* cldc(output_prefix, cur_iter); */
       }
 
       // sum vector for negative sampling
       if (save_opt==1 && hs==0){
         fprintf(stderr, "\n# Eval on sum vector file %s\n", sum_vector_file);
         sprintf(sum_vector_file, "%s.sumvec.%s", output_prefix, src->lang);
-        eval_mono(sum_vector_file, src->lang, cur_iter);
+        /* eval_mono(sum_vector_file, src->lang, cur_iter); */
 
         if (is_bi){
           sprintf(sum_vector_file, "%s.sumvec.%s", output_prefix, tgt->lang);
-          eval_mono(sum_vector_file, tgt->lang, cur_iter);
+          /* eval_mono(sum_vector_file, tgt->lang, cur_iter); */
 
           // cldc
           sprintf(sum_vector_prefix, "%s.sumvec", output_prefix);
-          cldc(sum_vector_prefix, cur_iter);
+          /* cldc(sum_vector_prefix, cur_iter); */
         }
       }
 
-      fflush(stderr);
+      /* fflush(stderr); */
     } // end if eval_opt
   } // for cur_iter
 
